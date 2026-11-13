@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Keratin M.A Academy — онлайн-курси</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff0f6;--bg2:#fde4ef;--card:#ffffff;--text:#1f2433;--muted:#6b7084;--p1:#f472b6;--p2:#db2777;--soft:#fbd5e6;--shadow:rgba(219,39,119,.22);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1220;--bg2:#2a1630;--card:#2a1d30;--text:#f8eef3;--muted:#b9a9bb;--soft:#4a2543;--shadow:rgba(0,0,0,.4);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1d1220;--bg2:#2a1630;--card:#2a1d30;--text:#f8eef3;--muted:#b9a9bb;--soft:#4a2543;--shadow:rgba(0,0,0,.4);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Montserrat',system-ui,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;background:var(--card);box-shadow:0 2px 14px var(--shadow)}
+.logo{font-weight:800;color:var(--p2);font-size:18px;white-space:nowrap}
+nav{display:flex;align-items:center;gap:16px;font-size:14px;font-weight:500;color:var(--muted)}
+nav .hide{display:none}
+@media(min-width:620px){nav .hide{display:inline}}
+.btn{display:inline-block;padding:14px 28px;border-radius:999px;font-weight:700;font-size:15px;background:linear-gradient(135deg,var(--p1),var(--p2));color:#fff;box-shadow:0 8px 20px var(--shadow);border:2px solid transparent;cursor:pointer;font-family:inherit;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.sm{padding:9px 18px;font-size:14px}
+.btn.ghost{background:transparent;color:var(--p2);border-color:var(--p2);box-shadow:none}
+.hero{position:relative;text-align:center;padding:90px 22px 100px;background:linear-gradient(180deg,var(--bg2),var(--bg));overflow:hidden}
+.hero::before{content:"";position:absolute;right:-120px;top:-100px;width:380px;height:380px;border-radius:50%;background:var(--soft);opacity:.7}
+.hero::after{content:"";position:absolute;left:-100px;bottom:-120px;width:260px;height:260px;border-radius:50%;background:var(--soft);opacity:.6}
+.hero>*{position:relative;z-index:1}
+.fl{position:absolute;z-index:0;font-size:28px;animation:fl 6s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-14px) rotate(8deg)}}
+.badge{display:inline-block;padding:9px 18px;border-radius:999px;background:var(--soft);color:var(--p2);font-size:12px;font-weight:700;letter-spacing:.12em}
+h1{font-size:clamp(32px,7vw,56px);font-weight:800;line-height:1.15;margin:22px auto 16px;max-width:760px}
+h1 span,h2 span{color:var(--p2)}
+.lead{color:var(--muted);font-size:17px;line-height:1.6;max-width:540px;margin:0 auto 30px}
+.cta{display:flex;flex-direction:column;gap:14px;max-width:340px;margin:0 auto}
+@media(min-width:620px){.cta{flex-direction:row;max-width:none;justify-content:center}}
+.stats{display:flex;justify-content:center;gap:34px;flex-wrap:wrap;margin-top:48px}
+.stats b{display:block;font-size:28px;color:var(--p2)}
+.stats small{color:var(--muted);font-size:13px}
+section{padding:70px 22px;max-width:1040px;margin:0 auto}
+h2{text-align:center;font-size:32px;font-weight:800;margin:0 0 10px}
+h2::after{content:"";display:block;width:64px;height:4px;border-radius:4px;margin:12px auto 0;background:linear-gradient(90deg,var(--p1),var(--p2))}
+.sub{text-align:center;color:var(--muted);margin:0 0 40px}
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border-radius:26px;padding:28px 24px;box-shadow:0 10px 28px var(--shadow);display:flex;flex-direction:column;gap:10px;position:relative}
+.card .ic{font-size:34px}
+.card h3{margin:0;font-size:19px}
+.card p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
+.card .tag{position:absolute;top:18px;right:18px;background:var(--soft);color:var(--p2);font-size:11px;font-weight:700;padding:5px 11px;border-radius:999px}
+.card .ic{font-size:0;height:14px}.card .ic::before{content:"";display:block;width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,var(--p1),var(--p2))}
+.cw{position:relative}
+.pop{display:none;position:absolute;right:0;top:calc(100% + 12px);min-width:230px;background:var(--card);border-radius:20px;padding:16px 18px;box-shadow:0 12px 32px var(--shadow);text-align:left;font-size:14px;color:var(--text);z-index:10}
+.pop.open{display:block}
+.pop a{display:block;padding:8px 0;font-weight:600}
+.pop a small{display:block;color:var(--muted);font-weight:500;font-size:12px}
+.ov{display:none;position:fixed;inset:0;z-index:20;background:rgba(20,8,20,.55);align-items:center;justify-content:center;padding:20px}
+.ov.open{display:flex}
+.modal{position:relative;background:var(--card);border-radius:28px;padding:36px 26px 30px;max-width:380px;width:100%;text-align:center;box-shadow:0 20px 50px var(--shadow);animation:pp .25s ease}
+@keyframes pp{from{transform:translateY(20px) scale(.96);opacity:0}}
+.modal p{line-height:1.6;margin:0 0 22px;font-weight:600}
+.modal .x{position:absolute;right:16px;top:12px;background:none;border:0;font-size:26px;color:var(--muted);cursor:pointer}
+.price{font-size:26px;font-weight:800;color:var(--p2);margin-top:auto;padding-top:8px}
+.price s{font-size:14px;color:var(--muted);font-weight:500;margin-left:6px}
+.steps .card{text-align:center;align-items:center}
+.num{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--p1),var(--p2))}
+.final{margin:20px;border-radius:32px;text-align:center;padding:60px 22px;background:linear-gradient(135deg,var(--p1),var(--p2));color:#fff;max-width:none}
+.final h2{color:#fff}.final h2::after{background:#fff}
+.final p{max-width:480px;margin:0 auto 26px;line-height:1.6}
+.final .btn{background:#fff;color:var(--p2)}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 20px 40px}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#top">✨ Keratin M.A</a>
+  <nav><a class="hide" href="#courses">Курси</a><a class="hide" href="#how">Як це працює</a><span class="cw"><button class="btn sm" id="cbtn" type="button">Контакти</button><div class="pop" id="cpop"><a href="https://instagram.com/keratin_m.a" target="_blank" rel="noopener"><small>Instagram</small>keratin_m.a</a><a href="tel:+380683244369"><small>Телефон</small>068 324 43 69</a></div></span></nav>
+</header>
+
+<div class="hero" id="top">
+  <span class="badge">ОНЛАЙН-КУРСИ ДЛЯ БЬЮТІ-МАЙСТРІВ</span>
+  <h1>Ваші знання — <span>це ваш дохід</span></h1>
+  <p class="lead">Кератинове випрямлення, ботокс та відновлення волосся. Навчайтеся у зручному темпі та починайте заробляти вже за місяць.</p>
+  <div class="cta"><a class="btn" href="#courses">Обрати курс</a><a class="btn ghost" href="#how">Як це працює</a></div>
+  <div class="stats"><div><b>1200+</b><small>випускниць</small></div><div><b>4.9 ★</b><small>середня оцінка</small></div><div><b>24/7</b><small>доступ до уроків</small></div></div>
+</div>
+
+<section id="courses">
+  <h2>Наші <span>курси</span></h2>
+  <p class="sub">Оберіть відеоурок, який хочете переглянути</p>
+  <div class="grid">
+    <div class="card"><div class="ic">🌲</div><h3>Як працювати з ялинковим волоссям</h3><p>Особливості структури, підбір складів і техніка роботи.</p><div class="price">500 ₴</div><a class="btn sm" href="#contact">Записатися</a></div>
+    <div class="card"><div class="ic">👱‍♀️</div><h3>Як працювати з блондом</h3><p>Безпечна робота зі знебарвленим волоссям без зайвого навантаження.</p><div class="price">500 ₴</div><a class="btn sm" href="#contact">Записатися</a></div>
+    <div class="card"><div class="ic">🎨</div><h3>Техніка напівперманент</h3><p>Покроковий розбір техніки та типові помилки.</p><div class="price">500 ₴</div><a class="btn sm" href="#contact">Записатися</a></div>
+    <div class="card"><div class="ic">❄️</div><h3>Холодне відновлення</h3><p>Як відновити волосся та повернути йому здоровий вигляд.</p><div class="price">500 ₴</div><a class="btn sm" href="#contact">Записатися</a></div>
+    <div class="card"><div class="ic">✨</div><h3>Нанопластика</h3><p>Технологія виконання від підготовки до фінального результату.</p><div class="price">500 ₴</div><a class="btn sm" href="#contact">Записатися</a></div>
+  </div>
+</section>
+
+<section id="how" class="steps">
+  <h2>Як це <span>працює</span></h2>
+  <p class="sub">Три простих кроки до нової професії</p>
+  <div class="grid">
+    <div class="card"><div class="num">1</div><h3>Оберіть відеоурок</h3><p>Залиште заявку на потрібний відеоурок, і ми зв’яжемося з вами.</p></div>
+    <div class="card"><div class="num">2</div><h3>Навчайтеся онлайн</h3><p>Дивіться уроки у зручний час і ставте запитання куратору.</p></div>
+    <div class="card"><div class="num">3</div><h3>Отримайте сертифікат</h3><p>Виконайте практичне завдання та підтвердіть свою кваліфікацію.</p></div>
+  </div>
+</section>
+
+<section class="final" id="contact">
+  <h2>Готові <span style="color:#fff">почати?</span></h2>
+  <p>Напишіть нам в Instagram або Telegram, і ми допоможемо обрати курс та відповімо на всі запитання.</p>
+  <button class="btn open-chat" type="button">Записатися онлайн</button>
+</section>
+
+<footer>© 2026 Keratin M.A Academy. Усі права захищено.</footer>
+<div class="ov" id="ov"><div class="modal"><button class="x" id="cx" type="button" aria-label="Закрити">×</button><p>Для придбання курсу перейдіть будь ласка у чат з майстром</p><a class="btn" href="https://t.me/study_courses1" target="_blank" rel="noopener">Відкрити чат @study_courses1</a></div></div>
+<script>
+(function(){
+var ov=document.getElementById('ov'),pop=document.getElementById('cpop');
+function openM(e){e.preventDefault();ov.classList.add('open')}
+document.querySelectorAll('.open-chat,.card a.btn').forEach(function(b){b.addEventListener('click',openM)});
+document.getElementById('cx').onclick=function(){ov.classList.remove('open')};
+ov.addEventListener('click',function(e){if(e.target===ov)ov.classList.remove('open')});
+document.getElementById('cbtn').onclick=function(e){e.stopPropagation();pop.classList.toggle('open')};
+document.addEventListener('click',function(e){if(!pop.contains(e.target))pop.classList.remove('open')});
+})();
+</script>
+</body>
+</html>
